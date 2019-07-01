@@ -1,0 +1,49 @@
+$color_red: #DB4343
+$color_purple: #614ad3
+
+html
+   padding: 20px
+.addroom_btn
+   margin-top: 10px
+   margin-bottom: 10px
+   padding: 5px 15px
+   background-color: #fff
+   border: 1px solid #DEDEDE
+   &::before
+      content: '+ '
+
+.room_container
+   box-shadow: 0px 0px 10px rgba(0,0,0,0.3)
+   .cover
+      height: 150px
+      background-color: #eee
+      position: relative
+      background-size: cover
+      background-position: center center
+      
+      h6
+         background-color: #fff
+         padding: 5px 15px
+         position: absolute
+         bottom: 10px
+         font-size: 17px
+      
+.block
+   width: 70px
+   height: 5px
+   background-color: $color_purple
+   margin-top: -10px
+      
+.fa-times
+   position: absolute
+   color: #fff
+   top: 5px
+   right: 5px
+   cursor: pointer
+   transition-duration: 0.3s
+   &:hover
+      color: $color_red
+   
+   
+.form-control
+   height: 35px
