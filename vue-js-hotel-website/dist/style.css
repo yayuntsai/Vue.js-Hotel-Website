@@ -3,8 +3,7 @@ html {
 }
 
 .addroom_btn {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 0px;
   padding: 5px 15px;
   background-color: #fff;
   border: 1px solid #DEDEDE;
@@ -15,6 +14,7 @@ html {
 
 .room_container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px -5px;
 }
 .room_container .cover {
   height: 150px;
@@ -24,11 +24,14 @@ html {
   background-position: center center;
 }
 .room_container .cover h6 {
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.7;
   padding: 5px 15px;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   font-size: 17px;
+  font-size: 14px;
 }
 
 .block {
@@ -52,4 +55,39 @@ html {
 
 .form-control {
   height: 35px;
+}
+
+s {
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.red_text {
+  background-color: #DB4343;
+  color: #fff;
+  width: 100px;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+
+.show_dis {
+  font-size: 12px;
+  padding: 0px 0px 10px 10px;
+}
+
+.info {
+  padding-top: 10px;
+}
+.info .room_eng {
+  font-size: 12px;
+  margin-left: 10px;
+}
+.info .icon {
+  padding-left: 10px;
+}
+.info i {
+  color: #BDBDBC;
+  font-size: 12px;
+  padding: 2px;
 }

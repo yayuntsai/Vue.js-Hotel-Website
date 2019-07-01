@@ -106,9 +106,15 @@ var rooms = [
 ];
 Vue.component('room-list',{
    template: "#room-list",
-   props:["room_data"],
+   props:["room_data","hotel_discount","id","del_room"],
    computed:{
-      bg_css: function(){
+      discount_show(){
+         return parseInt(this.room_data.discount*this.hotel_discount*100)
+      },
+      discount_final_show(){
+         return parseInt(this.room_data.discount*this.hotel_discount*this.room_data.price)
+      },
+      bg_css(){
          return {
            "background-image":"url('"+this.room_data.cover+"')"
          }   
@@ -120,11 +126,15 @@ Vue.component('room-list',{
 var vm = new Vue({
    el: '#app',
    data:{
-      rooms: rooms
+      rooms: rooms,
+      discount: 0.9,
    },
    methods: {
-      addRoom: function(){
-         console.log(this.rooms)
-      }
+      addRoom(){
+         //
+      },
+      del_room(id){
+         this.rooms.splice(id,1)
+       }
    }
 })

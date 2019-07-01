@@ -38,7 +38,7 @@
         <hr/>
         <div class="row">
           <div class="col-sm-4 col_room" v-for="(room,id) in rooms">
-            <room-list :room_data="room"></room-list>
+            <room-list :room_data="room" :hotel_discount="discount" :id="id" :del_room="del_room"></room-list>
           </div>
         </div>
       </div>
@@ -49,6 +49,12 @@
   <div class="room_container">
     <div class="cover" :style="bg_css">
       <h6>{{room_data.name}}</h6><i class="i fa fa-times" @click="del_room(id)"></i>
+    </div>
+    <div class="info">
+      <div class="room_eng">{{room_data.eng}}</div><span class="icon"><span v-if="room_data.equipment.breakfast"><i class="i fa fa-coffee"></i></span><span v-if="room_data.equipment.bathtub"><i class="i fa fa-bath"></i></span><span v-if="room_data.equipment.wifi"><i class="i fa fa-wifi"></i></span></span>
+      <div class="show_dis">{{room_data.discount}} * {{hotel_discount}} = {{discount_show}} 折</div>
+      <s>NT${{room_data.price}}</s>
+      <div class="red_text">NT${{discount_final_show}}</div>
     </div>
   </div>
 </template>
