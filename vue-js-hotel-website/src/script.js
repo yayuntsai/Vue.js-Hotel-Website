@@ -106,13 +106,16 @@ var rooms = [
 ];
 Vue.component('room-list',{
    template: "#room-list",
-   props:["room_data","hotel_discount","id","del_room"],
+   props:["room_data","hotel_discount","id","del_room","service_fee"],
    computed:{
       discount_show(){
          return parseInt(this.room_data.discount*this.hotel_discount*100)
       },
-      discount_final_show(){
+      discount_final(){
          return parseInt(this.room_data.discount*this.hotel_discount*this.room_data.price)
+      },
+      price_final_show(){
+         return parseInt(this.discount_final)+parseInt(this.service_fee)
       },
       bg_css(){
          return {
@@ -128,13 +131,27 @@ var vm = new Vue({
    data:{
       rooms: rooms,
       discount: 0.9,
+      service_fee: 200
    },
    methods: {
-      addRoom(){
-         //
+      add_room(){
+         let new_room = {
+            "name": "新房間",
+            "eng": "New Room",
+            "price": 5000,
+            "amount": 0,
+            "cover": "",
+            "discount": 0.5,
+            "equipment": {
+              "wifi": false,
+              "bathtub": true,
+              "breakfast": true
+            }
+         }
+         this.rooms.push(new_room)
       },
       del_room(id){
          this.rooms.splice(id,1)
-       }
+      }
    }
 })

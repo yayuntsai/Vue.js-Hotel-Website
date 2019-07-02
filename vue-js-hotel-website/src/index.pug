@@ -1,19 +1,26 @@
 #app
    .container-fluid
       .row
-         .col-sm-3
+         .col-sm-3.left_block
             h5 飯店資料
             hr
             label 折價
-            input.form-control
+            input.form-control(v-model="discount")
             label 服務費
-            input.form-control
-            button.addroom_btn(@click="addRoom") 新增房間
+            input.form-control(v-model="service_fee")
+            button.addroom_btn(@click="add_room") 新增房間
+            hr
             label 房間編輯
             select.form-control
                option(v-for="(item,index) in rooms", :key="index") {{item.name}}
                
-         .col-sm-9
+            //- .edit_room(v-model="")
+            //-    h4 {{room.name}}
+            //-    label
+               
+         
+               
+         .col-sm-9.right_block
             h5 房間列表
             hr
             .row
@@ -23,7 +30,8 @@
                      :room_data="room",
                      :hotel_discount="discount",
                      :id="id",
-                     :del_room="del_room"
+                     :del_room="del_room",
+                     :service_fee="service_fee"
                   )
                
                
@@ -43,7 +51,7 @@ template#room-list
                i.i.fa.fa-wifi
          
          .show_dis {{room_data.discount}} * {{hotel_discount}} = {{discount_show}} 折
-         s NT${{room_data.price}}
-         .red_text NT${{discount_final_show}}
+         s TWD ${{room_data.price}}
+         .red_text TWD ${{price_final_show}}
          
          
