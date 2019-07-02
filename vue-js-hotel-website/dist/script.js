@@ -131,7 +131,8 @@ var vm = new Vue({
    data:{
       rooms: rooms,
       discount: 0.9,
-      service_fee: 200
+      service_fee: 200,
+      edit_id: 0
    },
    methods: {
       add_room(){

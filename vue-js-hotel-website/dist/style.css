@@ -1,25 +1,38 @@
-html {
-  padding: 20px;
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-fluid {
+  margin: 20px;
 }
 
 .left_block {
   background-color: #7189bf;
-  padding-top: 20px;
-  margin: 0px;
+  padding: 22px;
   color: #fff;
+  height: 95vh;
+  overflow-y: scroll;
+}
+.left_block label {
+  font-size: 13px;
 }
 
 .right_block {
   border: 2px solid #7189bf;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 30px;
+  height: 95vh;
+  overflow-y: scroll;
 }
 
 .addroom_btn {
   margin: 10px 0px 10px 0px;
   border-radius: 5px;
   padding: 5px 15px;
-  background-color: #fff;
+  font-size: 13px;
+  color: #fff;
   border: 1px solid #DEDEDE;
+  background-color: #7189bf;
   cursor: pointer;
   transition-duration: 0.3s;
 }
@@ -27,24 +40,27 @@ html {
   content: "+ ";
 }
 .addroom_btn:hover {
-  background-color: #7189bf;
-  color: #fff;
+  background-color: #fff;
+  color: #7189bf;
 }
 
 .room_container {
+  margin: 10px 0px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  margin: 10px -5px;
-  transition-duration: 0.5s;
 }
 .room_container:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 .room_container .cover {
   height: 150px;
   background-color: #eee;
   position: relative;
-  background-size: cover;
+  background-size: 150%;
   background-position: center center;
+  transition: background-size 0.4s ease;
+}
+.room_container .cover:hover {
+  background-size: 160%;
 }
 .room_container .cover h6 {
   background-color: #000;
@@ -54,7 +70,6 @@ html {
   position: absolute;
   bottom: 5px;
   font-size: 17px;
-  font-size: 14px;
 }
 
 .block {
@@ -78,10 +93,12 @@ html {
 
 .form-control {
   height: 35px;
+  font-size: 14px;
+  padding-left: 10px;
 }
 
 s {
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 15px;
   padding: 10px;
 }
@@ -89,13 +106,13 @@ s {
 .red_text {
   background-color: #DB4343;
   color: #fff;
-  width: 100px;
-  font-size: 13px;
+  width: 120px;
+  font-size: 16px;
   padding: 2px 10px;
 }
 
 .show_dis {
-  font-size: 12px;
+  font-size: 14px;
   padding: 0px 0px 10px 10px;
 }
 
@@ -103,7 +120,7 @@ s {
   padding-top: 10px;
 }
 .info .room_eng {
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 10px;
   font-weight: 700;
 }
@@ -112,14 +129,22 @@ s {
 }
 .info i {
   color: #BDBDBC;
-  font-size: 12px;
+  font-size: 14px;
   padding: 2px;
 }
 
 .edit_room {
-  width: 100%;
-  height: 500px;
-  border: 1px solid #dedede;
-  border-radius: 5px;
   margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #6377a5;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  background: #4D4D4C;
 }
