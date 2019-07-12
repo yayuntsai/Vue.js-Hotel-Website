@@ -1,3 +1,3 @@
 {
-  "alias": ["vue-hotel.com"]
+  "name":"vue-hotel","builds":[{"src":"package.json","use":"@now/static-build"}]
 }
