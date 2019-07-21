@@ -7,6 +7,7 @@ html,body
    // margin: 20px
    height: 100vh
    overflow: hidden
+   font-family: Microsoft Jhenghei
    
 .container-fluid
    margin: 20px
@@ -18,7 +19,7 @@ html,body
    height: 95vh
    overflow-y: scroll
    label
-      font-size: 13px
+      font-size: 15px
    
 .right_block
    border: 2px solid $color_blue
@@ -32,7 +33,7 @@ html,body
    padding: 5px 15px
    font-size: 13px
    color: #fff
-   // background-color: #fff
+   font-family: Microsoft Jhenghei
    border: 1px solid #DEDEDE
    background-color: $color_blue
    cursor: pointer
@@ -46,17 +47,15 @@ html,body
 .room_container
    margin: 10px 0px
    box-shadow: 0px 0px 10px rgba(0,0,0,0.3)
+   transition-duration: 0.5s
    &:hover
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.4)
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.7)
    .cover
-      height: 150px
+      height: 170px
       background-color: #eee
       position: relative
-      background-size: 150%
+      background-size: cover
       background-position: center center
-      transition: background-size 0.4s ease
-      &:hover
-         background-size: 160%
          
       h6
          background-color: #000
@@ -126,11 +125,18 @@ s
    padding: 10px
    font-size: 14px
    background-color: #6377a5
+   label
+      margin: 15px 0px 5px 0px
+   
+.dropdown
+   font-family: Microsoft Jhenghei
 
 //scroll bar
 ::-webkit-scrollbar 
    width: 5px
+   
 
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb
    -webkit-border-radius: 10px
    background: #4D4D4C
+

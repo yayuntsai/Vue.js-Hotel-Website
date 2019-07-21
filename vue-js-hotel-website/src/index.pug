@@ -2,42 +2,39 @@
    .container-fluid
       .row
          .col-sm-3.left_block
-            h4 飯店資料
+            h4 Room Detail
             hr
-            label 折價
+            label Discount
             input.form-control(v-model="discount")
-            label 服務費
+            label Service fee
             input.form-control(v-model="service_fee")
-            button.addroom_btn(@click="add_room") 新增房間
+            button.addroom_btn(@click="add_room") Add room
             hr
-            h6 房間編輯
+            h6 Edit room
             select.form-control.dropdown(v-model="edit_id")
                option(v-for="(item,index) in rooms", :key="index", :value="index") {{item.name}}
                
             .edit_room(v-for="(room,id) in [rooms[edit_id]]")
                h6 {{room.name}}
-               label 房間名稱
+               label Room name
                input.form-control(v-model="room.name")
-               label 英文名稱
+               label English name
                input.form-control(v-model="room.eng")
-               label 價格
+               label Price
                input.form-control(v-model="room.price")
-               label 折扣
+               label Discount
                input.form-control(v-model="room.discount")
-               label 房間設備
-               .equipment
-                  label.checkbox-custom-label 早餐
+               label 房間設備: 
                   input.checkbox-custom(type="checkbox" v-model="room.equipment.breakfast")
-                  label.checkbox-custom-label 浴缸
+                  label.checkbox-custom-label Breakfast
                   input.checkbox-custom(type="checkbox" v-model="room.equipment.bathtub")
-                  label.checkbox-custom-label Wifi
+                  label.checkbox-custom-label Bathtub
                   input.checkbox-custom(type="checkbox" v-model="room.equipment.wifi")
+                  label.checkbox-custom-label Wifi
                
-               
-         
                
          .col-sm-9.right_block
-            h4 房間列表
+            h4 Room list
             hr
             .row
                .col-sm-4.col_room(v-for="(room,id) in rooms")
@@ -66,7 +63,7 @@ template#room-list
             span(v-if="room_data.equipment.wifi")
                i.i.fa.fa-wifi
          
-         .show_dis {{room_data.discount}} * {{hotel_discount}} = {{discount_show}} 折
+         .show_dis {{room_data.discount}} * {{hotel_discount}} = {{discount_show}} discount
          s TWD ${{room_data.price}}
          .red_text TWD ${{price_final_show}}
          
